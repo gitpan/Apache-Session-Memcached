@@ -3,7 +3,7 @@ package Apache::Session::Store::Memcached;
 use Cache::Memcached;
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.01';
+$VERSION = '0.03';
 
 sub new {
 	my($class,$session) = @_;
@@ -46,7 +46,7 @@ sub materialize {
 
 sub remove {
     my($self, $session) = @_;
-    $self->{cache}->remove($session->{data}->{_session_id});
+    $self->{cache}->delete($session->{data}->{_session_id});
 }
 
 1;

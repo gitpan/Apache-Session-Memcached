@@ -1,4 +1,4 @@
-Apache-Session-Memcached version 0.01
+Apache-Session-Memcached version 0.03
 =====================================
 
 Apache::Session::Memcached stores persistent data using memcached (memory cache
@@ -13,8 +13,8 @@ for module documentation and use
 
 CHANGES FROM PREVIOUS VERSION
 
-	- First CPAN officiale release
-	+ Added base test and docs
+	! Fixed 'remove' session method with 'delete' Cache::Memcached call
+	+ Added delete calls in tests
 	
 See 'Changes' file in this distribution for complete history revision
 

@@ -2,7 +2,7 @@ use strict;
 use Test;
 use Apache::Session::Memcached;
 
-BEGIN { plan tests => 3 }
+BEGIN { plan tests => 4 }
 
 require 't/testlib.pl';
 my %config = read_config('t/CONFIG','Generate Serialize Servers');
@@ -22,3 +22,6 @@ tie %{$session}, 'Apache::Session::Memcached', $sid, {
 };
 
 ok($session->{foo},'bar');
+
+tied(%{$session})->delete;
+ok(1);
